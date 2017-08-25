@@ -23,3 +23,14 @@ test_until_loop_is_negative_of_while_loop(){
 
   assertEquals "0;1;2;3" "$out"
 }
+
+test_for_loop_in_a_list(){
+  words=$(echo hello+world | grep -Eo "\w+")
+  out=""
+
+  for word in $words; do
+    out="$out;$word"
+  done
+
+  assertEquals ";hello;world" "$out"
+}
