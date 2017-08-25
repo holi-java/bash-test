@@ -1,4 +1,6 @@
 language: bash
+os: linux
+dist: precise
 
 script:
   - bash all-tests.sh
