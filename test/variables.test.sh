@@ -83,3 +83,38 @@ test_export_variables(){
   source ./test/args.sh -e key value
   assertEquals "value" "$key"
 }
+
+test_assign_local_variable_after_will_does_not_change_the_global_variables(){
+  global="GLOBAL"
+  scoped="SCOPED"
+
+  change(){
+    local global=""
+    scoped="LOCAL"
+    global="LOCAL"
+  }
+
+  change
+
+  assertEquals "GLOBAL" $global
+  assertEquals "LOCAL" $scoped
+}
+
+test_eval_function_will_does_not_change_the_global_variables(){
+  global="GLOBAL"
+  scoped="SCOPED"
+
+  change(){
+    local global=""
+    scoped="LOCAL"
+    global="LOCAL"
+    echo $global
+  }
+
+  local=$(change) 
+
+  assertEquals "LOCAL" $local
+  assertEquals "GLOBAL" $global
+  assertEquals "SCOPED" $scoped
+}
+
