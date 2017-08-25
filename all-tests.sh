@@ -6,6 +6,7 @@ fi
 
 # loading tests files
 for test in `find test -name *.test.sh`; do
+  echo "add test: $test"
   source $test
 done
 
@@ -14,7 +15,6 @@ tests=`declare -F | sed s/^declare' '-f' '// | grep ^test`
 
 suite(){
   for test in $tests; do
-    echo "add test: $test"
     suite_addTest $test
   done
 }
