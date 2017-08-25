@@ -25,14 +25,6 @@ test_infline_if_then_fi(){
   fail
 }
 
-test_if_else(){
-  if [ true ]; then 
-    assertTrue true
-  else
-    fail "should can't be reach"
-  fi
-}
-
 test_if_check_empty_string_only(){
   if ! [ true ]; then fail "fail with 'true'"; fi
   if ! [ false ]; then fail "fail with 'false'"; fi
@@ -58,4 +50,20 @@ test_check_file_exists(){
 
   rm .test 
   if [ -f ".test" ]; then fail ".test exists"; fi
+}
+
+test_if_elseif_else_expression(){
+  assertEquals "one" `value 1`
+  assertEquals "two" `value 2`
+  assertEquals "many" `value 3`
+}
+
+value(){
+  if [ $1 == 1 ]; then
+    echo one
+  elif [ $1 == 2 ]; then
+    echo two
+  else
+    echo many
+  fi
 }
