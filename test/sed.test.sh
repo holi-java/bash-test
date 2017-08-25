@@ -4,6 +4,10 @@ test_replace_value_by_regex(){
   assertEquals 'jest' `echo test | sed s/^./j/`
 }
 
+test_replace_selected_text(){
+  assertEquals 'x' `echo test | sed c\x`
+}
+
 test_append_text_to_stream(){
   expected="test"$'\n'"shell"
 
