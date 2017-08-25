@@ -15,3 +15,9 @@ test_insert_text_to_stream(){
 
   assertEquals "$expected" "`echo test | sed 'i\shell'`"
 }
+
+test_transform_source_stream_to_target_stream(){
+  expected="zesz"
+
+  assertEquals "$expected" "`echo test | sed 'y/t/z/'`"
+}
