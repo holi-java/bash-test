@@ -30,7 +30,7 @@ test_nested_and(){
   assertFalse '[ false && false ]' 
 }
 
-test_or(){
+test_nested_or(){
   assertTrue '[ true || true ]' 
   assertTrue '[ false || true ]' 
 
