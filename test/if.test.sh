@@ -1,11 +1,28 @@
 #!/bin/bash
 
-test_if(){
+test_regular_if_statement(){
+  if [ true ]
+  then
+    assertTrue true
+    return
+  fi
+
+  fail
+}
+
+test_if_then_by_use_semi_separator(){
   if [ true ]; then 
     assertTrue true
     return
   fi
-  fail "should can't be reach"
+
+  fail
+}
+
+test_infline_if_then_fi(){
+  if [ true ]; then assertTrue true; return; fi
+
+  fail
 }
 
 test_if_else(){
