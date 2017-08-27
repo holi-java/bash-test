@@ -53,17 +53,17 @@ test_check_file_exists(){
 }
 
 test_if_elseif_else_expression(){
+  value(){
+    if [ $1 == 1 ]; then
+      echo one
+    elif [ $1 == 2 ]; then
+      echo two
+    else
+      echo many
+    fi
+  }
+
   assertEquals "one" `value 1`
   assertEquals "two" `value 2`
   assertEquals "many" `value 3`
-}
-
-value(){
-  if [ $1 == 1 ]; then
-    echo one
-  elif [ $1 == 2 ]; then
-    echo two
-  else
-    echo many
-  fi
 }
