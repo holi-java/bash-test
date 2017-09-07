@@ -1,4 +1,4 @@
-# Bash Script Tests [![status]][travis]
+# Bash Script Tests [![status][status]][travis]
 
 
 The tests write by [shunit2] for testing the linux [bash script].
