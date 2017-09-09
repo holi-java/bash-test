@@ -118,4 +118,19 @@ test_eval_function_will_does_not_change_the_global_variables(){
   assertEquals "SCOPED" $scoped
 }
 
+test_append_value_to_parameters(){
+  set -- 12345
+  assertEquals '12345' $@
+  assertEquals '1' $#
+
+  set -- 1 2 3 4 5
+  assertEquals '1' "$@"
+  assertEquals '1' $1
+  assertEquals '2' $2
+  assertEquals '5' $5
+  assertEquals 5 $#
+}
+
+
+
 source ../$shunit2/src/shell/shunit2
