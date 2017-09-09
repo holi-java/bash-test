@@ -9,14 +9,19 @@ test_operate_between_multi_commands(){
 }
 
 test_pipeline_status(){
-  false && assertEquals 1 $?
-  true && assertEquals 0 $?
+  false; assertEquals 1 $?
+  true; assertEquals 0 $?
 
-  false | true && assertEquals 0 $?
-  true  | false && assertEquals 1 $?
+  false | true; assertEquals 0 $?
+  true  | false; assertEquals 1 $?
 
-  !(false | true) && assertEquals 1 $?
-  !(true  | false) && assertEquals 0 $?
+  !(false | true); assertEquals 1 $?
+  !(true  | false); assertEquals 0 $?
+
+  #enable pipefail option
+  set -o pipefail
+  false | true; assertEquals 1 $?
+  true  | false; assertEquals 1 $?
 }
 
 test_redirect_stderr_to_stdout(){
