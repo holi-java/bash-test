@@ -67,3 +67,5 @@ test_if_elseif_else_expression(){
   assertEquals "two" `value 2`
   assertEquals "many" `value 3`
 }
+
+source ../$shunit2/src/shell/shunit2

@@ -17,3 +17,5 @@ test_parse_multiply_expression(){
 
   assertEquals 6 $actual
 }
+
+source ../$shunit2/src/shell/shunit2

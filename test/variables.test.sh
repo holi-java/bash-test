@@ -6,27 +6,27 @@ test_local_variables(){
 }
 
 test_get_the_first_arg(){
-  assertEquals "foo bar" "`./test/args.sh -f "foo bar" baz`"
+  assertEquals "foo bar" "`./args.sh -f "foo bar" baz`"
 }
 
 test_get_the_args_count(){
-  assertEquals 2 "`./test/args.sh -c "foo bar" baz`"
+  assertEquals 2 "`./args.sh -c "foo bar" baz`"
 }
 
 test_get_all_args(){
-  assertEquals "-a foo bar baz" "`./test/args.sh -a "foo bar" baz`"
+  assertEquals "-a foo bar baz" "`./args.sh -a "foo bar" baz`"
 }
 
 test_get_arg_dynamically(){
-  assertEquals "baz" "`./test/args.sh 2 "foo bar" baz`"
+  assertEquals "baz" "`./args.sh 2 "foo bar" baz`"
 }
 
 test_get_script_name(){
-  assertEquals "./test/args.sh" "`./test/args.sh -n`"
+  assertEquals "./args.sh" "`./args.sh -n`"
 }
 
 test_get_exit_status(){
-  assertEquals 0 "`./test/args.sh -s`"
+  assertEquals 0 "`./args.sh -s`"
 }
 
 test_get_hostname(){
@@ -80,7 +80,7 @@ test_export_variables(){
   key="bar"
   assertEquals "bar" $key
 
-  source ./test/args.sh -e key value
+  source ./args.sh -e key value
   assertEquals "value" "$key"
 }
 
@@ -118,3 +118,4 @@ test_eval_function_will_does_not_change_the_global_variables(){
   assertEquals "SCOPED" $scoped
 }
 
+source ../$shunit2/src/shell/shunit2

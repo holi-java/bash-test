@@ -9,13 +9,15 @@ test_replace_selected_text(){
 }
 
 test_append_text_to_stream(){
-  expected="test"$'\n'"shell"
+  expected="test"$'
+'"shell"
 
   assertEquals "$expected" "`echo test | sed 'a\shell'`"
 }
 
 test_insert_text_to_stream(){
-  expected="shell"$'\n'"test"
+  expected="shell"$'
+'"test"
 
   assertEquals "$expected" "`echo test | sed 'i\shell'`"
 }
@@ -25,3 +27,5 @@ test_transform_source_stream_to_target_stream(){
 
   assertEquals "$expected" "`echo test | sed 'y/t/z/'`"
 }
+
+source ../$shunit2/src/shell/shunit2

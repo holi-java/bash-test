@@ -64,3 +64,5 @@ test_continue_loop(){
 
   assertEquals "0;1;3" "$out"
 }
+
+source ../$shunit2/src/shell/shunit2

@@ -17,3 +17,5 @@ test_plus_assign_expression(){
 
   assertEquals 3 $a
 }
+
+source ../$shunit2/src/shell/shunit2

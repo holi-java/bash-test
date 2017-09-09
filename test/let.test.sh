@@ -45,3 +45,5 @@ test_multiply(){
 test_use_command_substitution(){
   assertEquals 3 "$(let a=1+2 && echo $a)"
 }
+
+source ../$shunit2/src/shell/shunit2

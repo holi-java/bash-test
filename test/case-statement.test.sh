@@ -13,3 +13,5 @@ count(){
     *) echo many;;
   esac
 }
+
+source ../$shunit2/src/shell/shunit2

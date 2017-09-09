@@ -37,3 +37,5 @@ test_nested_or(){
   assertFalse '[ true || false ]' 
   assertFalse '[ false || false ]' 
 }
+
+source ../$shunit2/src/shell/shunit2

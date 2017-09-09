@@ -11,3 +11,5 @@ test_get_number_length(){
 
   assertEquals 5 ${#value}
 }
+
+source ../$shunit2/src/shell/shunit2

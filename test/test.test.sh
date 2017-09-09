@@ -20,3 +20,5 @@ test_file_exists_by_test_command(){
 
   rm $file
 }
+
+source ../$shunit2/src/shell/shunit2

@@ -44,3 +44,5 @@ test_function_scope(){
   assertEquals "SCOPE" $(scope)
   assertEquals "LOCAL" $(local)
 }
+
+source ../$shunit2/src/shell/shunit2
